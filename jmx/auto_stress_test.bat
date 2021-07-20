@@ -28,9 +28,9 @@ rem 需要在windows系统引入 sed.exe命令，用法与linux三剑客中的se
 sed -i "s/thread_num/%num%/g" %jmx_filename%
 
 rem JMeter 静默压测
-call %jmeter_path%/bin/jmeter -n -t %jmx_filename% -l %jtl_filename%
+call jmeter -n -t %jmx_filename% -l %jtl_filename%
 rem 生成Web压测报告
-call %jmeter_path%/bin/jmeter -g %jtl_filename% -e -o %web_report_path_name%
+call jmeter -g %jtl_filename% -e -o %web_report_path_name%
 rem 清理临时文件
 del %jmx_filename% %jtl_filename%
 
